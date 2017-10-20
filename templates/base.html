@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Kalyan Yojana: {%block title%} {%endblock%}</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Akatsuki">
+        <meta name="description" content="Kalyan Yojana">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+        {% block include_css %}
+
+        {% endblock %}
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel ="icon" href="{% static 'kalyan/img/favicon.png' %}">
+        <link href="{% static 'kalyan/css/bootstrap.min.css' %}" rel="stylesheet">
+       <!--  <link href="{% static 'kalyan/css/styles.css' %}" rel="stylesheet"> -->
+          <!-- <script src="js/bootstrap.min.js"/>
+        <script src="js/scripts.js"/> -->
+    </head>
+    <style type="text/css" media="screen">
+        @font-face {
+            font-family: Font;
+            src: url({% static 'kalyan/fonts/Roboto-Regular.ttf' %});
+        }
+           /* html {
+                background:url({% static 'kalyan/img/Bhamashah.jpg' %}) no-repeat center center fixed;
+            }
+
+            body {
+                background:rgba(255,255,255,0.8); /* applies a 50% transparent white background */
+            }
+    </style>
+    <body style="font-family: Font;" background="{% static 'kalyan/img/bg.jpg' %}" style="background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+     <!-- navbar-fixed-top -->
+
+
+<!--     <nav id="nav" class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">-->
+<!--	  <a class="navbar-brand" href="#portfolio">Kalyan Yojana</a>-->
+<!--	 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
+<!--	  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--	<ul class="navbar-nav mr-auto">-->
+<!--		<li class="nav-item">-->
+<!--			 <a class="nav-link active" href="/public_views/complains/all">Public Views</a>-->
+<!--		</li>-->
+<!--		<li class="nav-item">-->
+<!--      <a class="nav-link" href="/applis_view">Application Views</a>-->
+<!--    </li>-->
+<!--		<li class="nav-item">-->
+<!--			<a class="nav-link" href="#">Contact me</a>-->
+<!--		</li>-->
+<!--	</ul>-->
+<!--	</div>-->
+<!--</nav>-->
+
+
+
+                    <nav id="nav" class="top navbar navbar-light navbar-expand-sm fixed-top" style="background-color: #D3D3D3;" >
+                        <a class="navbar-brand" href="/">Kalyan Yojana</a>
+	 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="/public_views/complains/all">Public Views</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/applis_view">Application Views</a></li>
+                            {% if "gov" not in request.session.keys %}
+                            <li class="nav-item"><a class="nav-link" href="/scomplain">Complain | Suggest</a></li>
+                            {% endif %}
+                            <li class="nav-item"><a class="nav-link" href="/Services/0">Services</a></li>
+                            {% if "id" not in request.session.keys %}
+                            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            {% endif %}
+                            {% if "id" in request.session.keys and "gov" not in request.session.keys %}
+
+                            <li class="nav-item"><a class="nav-link" href="/profile/{{request.session.id}}">Profile</a></li>
+                            {% endif %}
+                            <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                            {% if "id" in request.session.keys %}
+                            <li class="nav-item"><a class="nav-link" href="/logout">LogOut</a></li>
+                            {% endif %}
+                    </ul>
+                    </div>
+                </nav>
+
+               <!--  <div>
+                    <a href="/"><h1 style="font-size: 100px; color: #90caf9;"><span lang="Hindi">कल्याण योजना</span></h1></a>
+                </div> -->
+
+
+     <!-- Write code -->
+
+        {% block content %}
+
+        <!-- Write Code -->
+
+        {% endblock %}
+        <br/>
+ <!-- navbar-fixed-bottom -->
+ <br/>
+        <div align="center">
+        <footer class="footer navbar-fixed-bottom" style="background-color: white; display: inline-block; margin-top: 100%">
+            <div class="container">
+               <p class="text-muted" align="center"> Brought to you by <a href="mailto:upendra.upadhyay.97@gmail.com">Akatsuki Team</a>
+                <br/>
+                Give <a href="/feedback">feedback.</a></p>
+            </div>
+         </footer>
+         </div>
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+         <script src="{% static 'kalyan/js/jquery-1.11.3.min.js' %}"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="{% static 'kalyan/js/scripts.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'kalyan/js/location.js' %}"></script>
+
+        <script>
+            {% block location %}
+
+            {% endblock %}
+        </script>
+
+
+    {% block includes %}
+
+
+
+    {% endblock %}
+
+    </body>
+</html>
