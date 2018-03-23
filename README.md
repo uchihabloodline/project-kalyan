@@ -12,9 +12,9 @@ can file a complain against any corrupt official anonymously and without even re
 
 <h2> Team memebers :</h2>
 <ul>
-<li>Shivam pandey[Team Former/leader] </li>
-<li>Upendra upadhyay<li>
-<li>Charchit sharma <li>
+  <li>Shivam pandey[Team Former/leader]</li>
+  <li>Upendra upadhyay</li>
+<li>Charchit sharma </li>
 <li>Manoj jeswani</li>
 </ul>
 
